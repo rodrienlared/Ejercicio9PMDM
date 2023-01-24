@@ -22,6 +22,8 @@ class MainActivity3 : AppCompatActivity() {
         binding.imagenClase.setBackgroundResource(R.drawable.inicio)
         binding.imagenRaza.setBackgroundResource(R.drawable.inicio)
 
+        setCustomProperties()
+
         when(claseFinal){
             "mago" -> binding.imagenClase.setBackgroundResource(R.drawable.mago)
             "ladron" -> binding.imagenClase.setBackgroundResource(R.drawable.ladron)
@@ -44,5 +46,10 @@ class MainActivity3 : AppCompatActivity() {
         binding.begin.setOnClickListener {
             startActivity(Intent(this, MainActivity4::class.java))
         }
+    }
+
+    private fun setCustomProperties() {
+        binding.fuerzaTextView.text = binding.fuerzaTextView.text.toString() + (10..15).random().toString()
+        binding.defensaTextView.text = binding.defensaTextView.text.toString() + (1..5).random().toString()
     }
 }
